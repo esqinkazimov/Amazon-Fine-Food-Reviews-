@@ -113,12 +113,3 @@ class and Negative class.
 ## Conclusions:
 1. Avgw2vec Featurization in Random Forest (BASE-LEARNERS=120) with Grid Search gave the Best Results with F1-score of 89.0311.
 2. Tfidfw2v Featurization in GBDT (Learning Rate=0.05, DEPTH=3) gave the Best Results with F1-score of 88.9755.
-
-## 8. LSTM(RNNs)
-1. Getting Vocabulary of all the words and Getting Frequency of each word, Indexing Each word Converting data into Imdb dataset format Running the lstm model and Report the Accuracy.
-2. Applied Different Architectures of LSTM on Amazon Fine Food Reviews Dataset.
-3. Recurrent Neural Networks(RNN) with One LSTM layer.
-4. Recurrent Neural Networks(RNN) with Two LSTM layer.
-5. Recurrent Neural Networks(RNN) with Three LSTM layer.
-## Conclusions:
-1. RNN with 1LSTM layer has got high Accuracy 92.76
