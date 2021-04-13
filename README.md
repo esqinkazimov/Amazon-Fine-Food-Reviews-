@@ -32,17 +32,16 @@ Attribute Information:
 9. Summary - brief summary of the review
 10. Text - text of the review
 
-## 1. Exploratory Data Analysis, Natural Language Processing, Text Preprocessing and Visualization using TSNE
+# 1. Exploratory Data Analysis, Natural Language Processing, Text Preprocessing
 1. Defined Problem Statement.
 2. Performed Exploratory Data Analysis(EDA) on Amazon Fine Food Reviews Dataset Plotted Word Clouds, Distribution plots, Histograms, etc.
 3. Performed Data Cleaning & Data Preprocessing(Removed html tags, Punctuations, Stopwords and Stemmed the words using Porter Stemmer).
-4. Plotted TSNE with Different Perplexity values for Different Featurization like BOW(uni-gram), Tfidf, Avg-Word2Vec and Tf-idf-Word2Vec.
 
-## 2. KNN
+# 2. KNN
 1. Applied K-Nearest Neighbour on Different Featurization like BOW, tfidf, Avg-Word2Vec and Tf-idf-Word2Vec.
 Applying 10-fold CV by using Brute Force Algorithm to Find Optimal 'K'.
 2. Calculated MissClassification Error for each K value.
-3. Evaluated the Test data on Various Performance Metrics like Accuracy, F1-score, Precision, Recall,etc. also Plotted Confusion matrix. 
+3. Evaluated the Test data on Various Performance Metrics like AUC Score, F1-score, Precision, Recall,etc. also Plotted Confusion matrix. 
 
 ## Failure Cases of K-NN:-
 1. If my Query Point is Far Away from Neighbour Points I cannot Decide it's Particular Class.
@@ -54,22 +53,22 @@ Knn takes large Space Complexity of order(nd) and time complexity of order(nd).
 ## Conclusions:
 1. KNN is a very Slow Algorithm it takes very long Time to Train.
 2. In K-nn We Should not take K-value even Because Classification is done by Majority vote.
-2. Best Accuracy is Achieved by Avg Word2Vec Featurization Which is of 89.48%.
+2. Best AUC Socre and F1 score is Achieved by Avg Word2Vec Featurization Which is of 0.924 and 0.84 respectively.
 
-## 3. Naive Bayes
+# 3. Naive Bayes
 1. Applied Naive Bayes using Bernoulli NB and Multinomial NB on Different Featurization BOW, Tfidf.
 2. Find Right Alpha(α) using Cross Validation.
 3. Get Feature Importance for Positive class and Negative Class.
-4. Evaluated the Test data on Various Performance metrics like Accuracy, F1-score, Precision, Recall,etc. also Plotted Confusion matrix.
+4. Evaluated the Test data on Various Performance metrics like AUC Score, F1-score, Precision, Recall,etc. also Plotted Confusion matrix.
 
 ## Conclusions:
 1. Naive Bayes is much Faster Algorithm than KNN.
-2. Best F1 score is Acheived by Tf-idf Featurization which is 0.89.
+2. Best AUC Score and F1 score is Acheived by Tf-idf Featurization which is 0.978 and 0.93 respectively.
 
-## 4. Logistic Regression
+# 4. Logistic Regression
 1. Applied Logistic Regression on Different Featurization BOW, Tfidf, Avg-Word2Vec and Tf-idf-Word2Vec.
 2. Find Lambda(λ) By Grid Search & Randomized Search.
-3. Evaluated the Test data on various Performance Metrics like Accuracy, F1-score, Precision, Recall,etc. also Plotted Confusion matrix.
+3. Evaluated the Test data on various Performance Metrics like AUC Score, F1-score, Precision, Recall,etc. also Plotted Confusion matrix.
 4. Showed How Sparsity Increases as we Increase lambda or decrease C when L1 Regularizer is used for each Featurization.
 5. Did Pertubation Test to check whether the Features are multi-collinear or not.
 
@@ -81,18 +80,19 @@ Knn takes large Space Complexity of order(nd) and time complexity of order(nd).
 
 ## Conclusions:
 1. Sparsity Increases as we decrease C (increase lambda) When we use L1 Regularizer for Regularization.
-2. Logistic Regression with Tfidf Featurization Performs best with F1_score of 0.89 and Accuracy of 93.385.
+2. Logistic Regression with Tfidf Featurization Performs best with F1_score of 0.92 and AUC Score of 0.970.
 3. Logistic Regression is Faster Algorithm.
 
 ## 5. SVM
 1. Applied SVM with RBF(Radial Basis Function) kernel on Different Featurization BOW, Tfidf, Avg-Word2Vec and Tf-idf-Word2Vec.
 2. Find Right C and Gamma (ɣ) Using Grid Search & Randomized Search Cross Validation.
 3. Applied SGDClassifier on Featurization.
-3. Evaluated Test Data on Various Performance Metrics like Accuracy, F1-score, Precision, Recall,etc. also plotted Confusion matrix. 
+3. Evaluated Test Data on Various Performance Metrics like AUC Score, F1-score, Precision, Recall,etc. also plotted Confusion matrix. 
 
 ## Conclusions:
 1. SGD with Bow By Random Search gives Better Results.
 2. SGDClasiifier Takes Very Less Time to Train.
+3. SGDClassifier with L2 Regularization and Tfidf Featurization Performs best with F1_score of 0.92 and AUC Score of 0.971
 
 ## 6. Decision Trees
 1. Applied Decision Trees on Different Featurization BOW, Tfidf, Avg-Word2Vec and Tf-idf-Word2Vec To find the optimal depth using Cross Validation.
@@ -101,15 +101,4 @@ Knn takes large Space Complexity of order(nd) and time complexity of order(nd).
 4.Plotted wordclouds of Feature Importance of both Positive class and Negative Class.
 
 ## Conclusions:
-1. Tf-idfw2vec Featurization(max_depth=11) gave the Best Results with Accuracy of 77.24.
-
-## 7. Ensembles Models (Random Forest &Grident Boost Decision Tree)
-1.Apply GBDT and Random Forest Algorithm To Find Right Baselearners using Cross Validation and Get Feature Importance for Positive
-class and Negative class.
-2. Performing Grid Search for getting the Best Max_depth, Learning rate.
-3. Evaluated the Test data on Various Performance Metrics like Accuracy, F1-score, Precision, Recall,etc. also plotted Confusion matrix. 
-4. Plotted Word Cloud of Feature Importance Received for RF and GBDT Classifier.
-
-## Conclusions:
-1. Avgw2vec Featurization in Random Forest (BASE-LEARNERS=120) with Grid Search gave the Best Results with F1-score of 89.0311.
-2. Tfidfw2v Featurization in GBDT (Learning Rate=0.05, DEPTH=3) gave the Best Results with F1-score of 88.9755.
+1. BOW Featurization(max_depth=50) gave the Best Results with AUC Score of 0.858 and F1 Score of 0.79.
